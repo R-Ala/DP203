@@ -1,0 +1,24 @@
+{
+	"name": "tr_population_daily",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_population_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/data/blobs/population_by_age",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/9ecfbaca-a7d3-4990-bdce-764dd8ca246a/resourceGroups/covid-analytics-ra/providers/Microsoft.Storage/storageAccounts/covidstorageaccy01",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
