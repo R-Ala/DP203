@@ -1,0 +1,9 @@
+{
+	"name": "project-ala-adf01",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "732f31f9-1f93-496b-83a6-6796c8313709",
+		"tenantId": "cdaba0fd-e7b9-4f60-aeda-0f8973fc632b"
+	}
+}

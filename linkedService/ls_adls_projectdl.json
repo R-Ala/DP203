@@ -1,0 +1,16 @@
+{
+	"name": "ls_adls_projectdl",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://projectalaadlsacc.dfs.core.windows.net",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NDM5ZjM3Yi1hZDJiLTQ1ZDktOGMxNy0zZjA3MmRjM2Y2N2MiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR-1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
