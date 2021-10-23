@@ -1,0 +1,23 @@
+{
+	"name": "sql_movies_dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLTest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
