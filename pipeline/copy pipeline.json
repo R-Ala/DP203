@@ -94,7 +94,7 @@
 									"referenceName": "csv_movies_dynamic",
 									"type": "DatasetReference",
 									"parameters": {
-										"folderName": {
+										"FolderName": {
 											"value": "@{item().FolderName}",
 											"type": "Expression"
 										},

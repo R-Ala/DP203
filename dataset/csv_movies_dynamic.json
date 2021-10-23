@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"folderName": {
+			"FolderName": {
 				"type": "string"
 			},
 			"DelimiterSymbol": {
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@dataset().folderName",
+					"value": "@dataset().FolderName",
 					"type": "Expression"
 				},
 				"container": "mssql1"
