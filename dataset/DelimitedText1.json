@@ -1,5 +1,5 @@
 {
-	"name": "actualblob",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobacc",
