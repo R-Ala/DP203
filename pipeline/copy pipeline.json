@@ -82,7 +82,14 @@
 									},
 									"disableMetricsCollection": false
 								},
-								"enableStaging": false,
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "Blob_MSSQL",
+										"type": "LinkedServiceReference"
+									},
+									"path": "mssql"
+								},
 								"translator": {
 									"type": "TabularTranslator",
 									"typeConversion": true,
