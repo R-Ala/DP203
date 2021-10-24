@@ -101,7 +101,7 @@
 											"value": "@{item().FolderName}",
 											"type": "Expression"
 										},
-										"DelimiterSymbol": {
+										"Delimiter": {
 											"value": "@{item().Delimiter}",
 											"type": "Expression"
 										}

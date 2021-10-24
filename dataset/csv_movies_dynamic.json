@@ -9,7 +9,7 @@
 			"FolderName": {
 				"type": "string"
 			},
-			"DelimiterSymbol": {
+			"Delimiter": {
 				"type": "string"
 			}
 		},
@@ -21,7 +21,7 @@
 				"container": "mssql"
 			},
 			"columnDelimiter": {
-				"value": "@dataset().DelimiterSymbol",
+				"value": "@dataset().Delimiter",
 				"type": "Expression"
 			},
 			"escapeChar": "\\",
