@@ -129,6 +129,17 @@
 				}
 			}
 		],
+		"variables": {
+			"FolderName": {
+				"type": "String"
+			},
+			"Delimiter": {
+				"type": "String"
+			},
+			"SQLTable": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
