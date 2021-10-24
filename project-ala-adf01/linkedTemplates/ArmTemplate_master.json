@@ -1,0 +1,195 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "project-ala-adf01"
+		},
+		"AzureBlobacc_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobacc'"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
+		},
+		"Azurelsq3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azurelsq3'"
+		},
+		"Azurestoragelinkedserviceq3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azurestoragelinkedserviceq3'"
+		},
+		"Blob_MSSQL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Blob_MSSQL'"
+		},
+		"SQLTest_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQLTest'"
+		},
+		"SqlServerLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServerLinkedService'"
+		},
+		"SqlServerLinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServerLinkedService'"
+		},
+		"Sqldb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Sqldb1'"
+		},
+		"ls_adls_covidreportingdl_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_covidreportingdl'"
+		},
+		"ls_adls_projectdl_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_projectdl'"
+		},
+		"ls_asa_covidreportingsa_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_asa_covidreportingsa'"
+		},
+		"ls_asa_projectsa_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_asa_projectsa'"
+		},
+		"SqlServerLinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "LAPTOP-R8UMQG4N\\carun"
+		},
+		"ds_cases_deaths_raw_csv_http_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://opendata.ecdc.europa.eu"
+		},
+		"ls_adls_covidreportingdl_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://covidstorageaccvyadls.dfs.core.windows.net"
+		},
+		"ls_adls_projectdl_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://projectalaadlsacc.dfs.core.windows.net"
+		},
+		"ls_http_ecdc_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://opendata.ecdc,europa.eu"
+		},
+		"tr_population_daily_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/9ecfbaca-a7d3-4990-bdce-764dd8ca246a/resourceGroups/covid-analytics-ra/providers/Microsoft.Storage/storageAccounts/covidstorageaccy01"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "project-ala-adf01_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Blob_MSSQL_connectionString": {
+						"value": "[parameters('Blob_MSSQL_connectionString')]"
+					},
+					"SQLTest_connectionString": {
+						"value": "[parameters('SQLTest_connectionString')]"
+					},
+					"ls_adls_covidreportingdl_accountKey": {
+						"value": "[parameters('ls_adls_covidreportingdl_accountKey')]"
+					},
+					"ls_asa_covidreportingsa_connectionString": {
+						"value": "[parameters('ls_asa_covidreportingsa_connectionString')]"
+					},
+					"AzureBlobacc_connectionString": {
+						"value": "[parameters('AzureBlobacc_connectionString')]"
+					},
+					"AzureStorageLinkedService_connectionString": {
+						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
+					},
+					"Azurelsq3_connectionString": {
+						"value": "[parameters('Azurelsq3_connectionString')]"
+					},
+					"Azurestoragelinkedserviceq3_connectionString": {
+						"value": "[parameters('Azurestoragelinkedserviceq3_connectionString')]"
+					},
+					"SqlServerLinkedService_connectionString": {
+						"value": "[parameters('SqlServerLinkedService_connectionString')]"
+					},
+					"SqlServerLinkedService_password": {
+						"value": "[parameters('SqlServerLinkedService_password')]"
+					},
+					"Sqldb1_connectionString": {
+						"value": "[parameters('Sqldb1_connectionString')]"
+					},
+					"ls_adls_projectdl_accountKey": {
+						"value": "[parameters('ls_adls_projectdl_accountKey')]"
+					},
+					"ds_cases_deaths_raw_csv_http_properties_typeProperties_url": {
+						"value": "[parameters('ds_cases_deaths_raw_csv_http_properties_typeProperties_url')]"
+					},
+					"ls_adls_covidreportingdl_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_covidreportingdl_properties_typeProperties_url')]"
+					},
+					"ls_http_ecdc_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_ecdc_properties_typeProperties_url')]"
+					},
+					"SqlServerLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServerLinkedService_properties_typeProperties_userName')]"
+					},
+					"ls_adls_projectdl_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_projectdl_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "project-ala-adf01_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_asa_projectsa_connectionString": {
+						"value": "[parameters('ls_asa_projectsa_connectionString')]"
+					},
+					"tr_population_daily_properties_typeProperties_scope": {
+						"value": "[parameters('tr_population_daily_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'project-ala-adf01_ArmTemplate_0')]"
+			]
+		}
+	]
+}

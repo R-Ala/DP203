@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "project-ala-adf01"
+		},
+		"AzureBlobacc_connectionString": {
+			"value": ""
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"Azurelsq3_connectionString": {
+			"value": ""
+		},
+		"Azurestoragelinkedserviceq3_connectionString": {
+			"value": ""
+		},
+		"Blob_MSSQL_connectionString": {
+			"value": ""
+		},
+		"SQLTest_connectionString": {
+			"value": ""
+		},
+		"SqlServerLinkedService_connectionString": {
+			"value": ""
+		},
+		"SqlServerLinkedService_password": {
+			"value": ""
+		},
+		"Sqldb1_connectionString": {
+			"value": ""
+		},
+		"ls_adls_covidreportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_adls_projectdl_accountKey": {
+			"value": ""
+		},
+		"ls_asa_covidreportingsa_connectionString": {
+			"value": ""
+		},
+		"ls_asa_projectsa_connectionString": {
+			"value": ""
+		},
+		"SqlServerLinkedService_properties_typeProperties_userName": {
+			"value": "LAPTOP-R8UMQG4N\\carun"
+		},
+		"ds_cases_deaths_raw_csv_http_properties_typeProperties_url": {
+			"value": "https://opendata.ecdc.europa.eu"
+		},
+		"ls_adls_covidreportingdl_properties_typeProperties_url": {
+			"value": "https://covidstorageaccvyadls.dfs.core.windows.net"
+		},
+		"ls_adls_projectdl_properties_typeProperties_url": {
+			"value": "https://projectalaadlsacc.dfs.core.windows.net"
+		},
+		"ls_http_ecdc_properties_typeProperties_url": {
+			"value": "https://opendata.ecdc,europa.eu"
+		},
+		"tr_population_daily_properties_typeProperties_scope": {
+			"value": "/subscriptions/9ecfbaca-a7d3-4990-bdce-764dd8ca246a/resourceGroups/covid-analytics-ra/providers/Microsoft.Storage/storageAccounts/covidstorageaccy01"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
