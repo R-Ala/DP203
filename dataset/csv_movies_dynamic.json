@@ -18,7 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "@dataset.FolderName",
+				"folderPath": {
+					"value": "@dataset().FolderName",
+					"type": "Expression"
+				},
 				"container": "mssql"
 			},
 			"columnDelimiter": {
