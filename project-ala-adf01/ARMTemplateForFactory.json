@@ -285,7 +285,14 @@
 											},
 											"disableMetricsCollection": false
 										},
-										"enableStaging": false,
+										"enableStaging": true,
+										"stagingSettings": {
+											"linkedServiceName": {
+												"referenceName": "Blob_MSSQL",
+												"type": "LinkedServiceReference"
+											},
+											"path": "mssql"
+										},
 										"translator": {
 											"type": "TabularTranslator",
 											"typeConversion": true,
@@ -304,7 +311,7 @@
 													"value": "@{item().FolderName}",
 													"type": "Expression"
 												},
-												"DelimiterSymbol": {
+												"Delimiter": {
 													"value": "@{item().Delimiter}",
 													"type": "Expression"
 												}
@@ -333,7 +340,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/sql_movies_dynamic')]",
-				"[concat(variables('factoryId'), '/datasets/csv_movies_dynamic')]"
+				"[concat(variables('factoryId'), '/datasets/csv_movies_dynamic')]",
+				"[concat(variables('factoryId'), '/linkedServices/Blob_MSSQL')]"
 			]
 		},
 		{
@@ -902,7 +910,7 @@
 					"FolderName": {
 						"type": "string"
 					},
-					"DelimiterSymbol": {
+					"Delimiter": {
 						"type": "string"
 					}
 				},
@@ -914,7 +922,7 @@
 						"container": "mssql"
 					},
 					"columnDelimiter": {
-						"value": "@dataset().DelimiterSymbol",
+						"value": "@dataset().Delimiter",
 						"type": "Expression"
 					},
 					"escapeChar": "\\",
