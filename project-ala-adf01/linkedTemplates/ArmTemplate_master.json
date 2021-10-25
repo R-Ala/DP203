@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobacc'"
 		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
+		},
 		"AzureStorageLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
@@ -110,6 +114,12 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureSqlDatabaseLinkedService_connectionString": {
+						"value": "[parameters('AzureSqlDatabaseLinkedService_connectionString')]"
+					},
+					"AzureStorageLinkedService_connectionString": {
+						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
+					},
 					"Blob_MSSQL_connectionString": {
 						"value": "[parameters('Blob_MSSQL_connectionString')]"
 					},
@@ -125,27 +135,6 @@
 					"AzureBlobacc_connectionString": {
 						"value": "[parameters('AzureBlobacc_connectionString')]"
 					},
-					"AzureStorageLinkedService_connectionString": {
-						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
-					},
-					"Azurelsq3_connectionString": {
-						"value": "[parameters('Azurelsq3_connectionString')]"
-					},
-					"Azurestoragelinkedserviceq3_connectionString": {
-						"value": "[parameters('Azurestoragelinkedserviceq3_connectionString')]"
-					},
-					"SqlServerLinkedService_connectionString": {
-						"value": "[parameters('SqlServerLinkedService_connectionString')]"
-					},
-					"SqlServerLinkedService_password": {
-						"value": "[parameters('SqlServerLinkedService_password')]"
-					},
-					"Sqldb1_connectionString": {
-						"value": "[parameters('Sqldb1_connectionString')]"
-					},
-					"ls_adls_projectdl_accountKey": {
-						"value": "[parameters('ls_adls_projectdl_accountKey')]"
-					},
 					"ds_cases_deaths_raw_csv_http_properties_typeProperties_url": {
 						"value": "[parameters('ds_cases_deaths_raw_csv_http_properties_typeProperties_url')]"
 					},
@@ -154,12 +143,6 @@
 					},
 					"ls_http_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_ecdc_properties_typeProperties_url')]"
-					},
-					"SqlServerLinkedService_properties_typeProperties_userName": {
-						"value": "[parameters('SqlServerLinkedService_properties_typeProperties_userName')]"
-					},
-					"ls_adls_projectdl_properties_typeProperties_url": {
-						"value": "[parameters('ls_adls_projectdl_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -179,8 +162,52 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"Azurelsq3_connectionString": {
+						"value": "[parameters('Azurelsq3_connectionString')]"
+					},
+					"Azurestoragelinkedserviceq3_connectionString": {
+						"value": "[parameters('Azurestoragelinkedserviceq3_connectionString')]"
+					},
+					"SqlServerLinkedService_connectionString": {
+						"value": "[parameters('SqlServerLinkedService_connectionString')]"
+					},
+					"SqlServerLinkedService_password": {
+						"value": "[parameters('SqlServerLinkedService_password')]"
+					},
+					"Sqldb1_connectionString": {
+						"value": "[parameters('Sqldb1_connectionString')]"
+					},
+					"ls_adls_projectdl_accountKey": {
+						"value": "[parameters('ls_adls_projectdl_accountKey')]"
+					},
 					"ls_asa_projectsa_connectionString": {
 						"value": "[parameters('ls_asa_projectsa_connectionString')]"
+					},
+					"SqlServerLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServerLinkedService_properties_typeProperties_userName')]"
+					},
+					"ls_adls_projectdl_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_projectdl_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'project-ala-adf01_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "project-ala-adf01_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"tr_population_daily_properties_typeProperties_scope": {
 						"value": "[parameters('tr_population_daily_properties_typeProperties_scope')]"
@@ -188,7 +215,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'project-ala-adf01_ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'project-ala-adf01_ArmTemplate_1')]"
 			]
 		}
 	]
